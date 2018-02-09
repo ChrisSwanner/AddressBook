@@ -13,19 +13,19 @@ namespace Project.Controllers
             return View();
         }
 
-        [HttpGet("/categories/{categoryId}/items/new")]
-        public ActionResult CreateForm(int categoryId)
+        [HttpGet("/contacts/{contactId}/items/new")]
+        public ActionResult CreateForm(int contactId)
         {
-          Category category = Category.Find(categoryId);
-          return View(category);
+          Contact contact = Contact.Find(contactId);
+          return View(contact);
         }
 
 
-        [HttpGet("/category/{categoryId}/items/{id}")]
-        public ActionResult ContentsDetails(int categoryId, int id)
+        [HttpGet("/contacts/{contactId}/items/{id}")]
+        public ActionResult ContentsDetails(int contactId, int id)
         {
 
-          Category category = Category.Find(categoryId);
+          Contact contact = Contact.Find(contactId);
           Item item = Item.Find(id);
           return View(item);
         }
@@ -33,7 +33,7 @@ namespace Project.Controllers
         [HttpPost("/items/delete")]
         public ActionResult DeleteAll()
         {
-          Category.ClearAll();
+          Contact.ClearAll();
           Item.ClearAll();
           return View();
         }

@@ -7,12 +7,14 @@ namespace Project.Models
     private string _description;
     private string _details;
     private int _id;
+    private string _phone;
     private static List<Item> _instances = new List<Item> {};
 
-    public Item(string description, string details)
+    public Item(string description, string details, string phone)
     {
       _description = description;
       _details = details;
+      _phone = phone;
       _instances.Add(this);
       _id = _instances.Count;
     }
@@ -25,6 +27,15 @@ namespace Project.Models
     public void SetDetails(string newDetails)
     {
       _details = newDetails;
+    }
+
+    public string GetPhone()
+    {
+      return _phone;
+    }
+    public void SetPhone(string newPhone)
+    {
+      _phone = newPhone;
     }
 
     public string GetDescription()

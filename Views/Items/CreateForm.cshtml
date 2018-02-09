@@ -4,20 +4,23 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="~/css/styles.css">
-    <title>To Do List</title>
+    <title></title>
   </head>
   <body>
     <div class="container">
-    <h1>To Do List</h1>
+    <h1>Contact Details</h1>
     <hr class="style-two">
-    <h3>Add a new item to @Model.GetName()</h3>
+    <h3>Add a new detail to @Model.GetName()</h3>
     <form action='/items' method='post'>
-      <input id='category-id' name='category-id' type='hidden' value='@Model.GetId()'>
-      <label for='item-description'>Item description</label>
-      <input id='item-description' name='item-description' type='text'>
-      <label for='item-details'>Item Details</label>
-      <input id='item-details' name='item-details' type='text'>
-      <button class="btn btn-info" type='submit'>Add item</button>
+      <input id='contact-id' name='contact-id' type='hidden' value='@Model.GetId()'>
+      <label for='person-name'>Name</label>
+      <input id='person-name' name='person-name' type='text'>
+      <label for='person-address'>Address</label>
+      <input id='person-address' name='person-address' type='text'>
+      <hr>
+      <label for='item-phone'>Phone Number</label>
+      <input id='item-phone' name='item-phone' type='text'>
+      <button class="btn btn-info" type='submit'>Add Details</button>
     </form>
   </div>
 

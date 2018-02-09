@@ -5,38 +5,38 @@ using Project.Models;
 
 namespace Project.Controllers
 {
-    public class CategoriesController : Controller
+    public class ContactsController : Controller
     {
 
-      [HttpGet("/categories")]
+      [HttpGet("/contacts")]
       public ActionResult Index()
       {
-          List<Category> allCategories = Category.GetAll();
-          return View(allCategories);
+          List<Contact> allContacts = Contact.GetAll();
+          return View(allContacts);
       }
 
-      [HttpGet("/categories/new")]
+      [HttpGet("/contacts/new")]
       public ActionResult CreateForm()
       {
           return View();
       }
 
-      [HttpPost("/categories")]
+      [HttpPost("/contacts")]
       public ActionResult Create()
       {
-          Category newCategory = new Category(Request.Form["category-name"]);
-          List<Category> allCategories = Category.GetAll();
-          return View("Index", allCategories);
+          Contact newContact = new Contact(Request.Form["contact-name"]);
+          List<Contact> allContacts = Contact.GetAll();
+          return View("Index", allContacts);
       }
 
-      [HttpGet("/categories/{id}")]
+      [HttpGet("/contacts/{id}")]
       public ActionResult Details(int id)
       {
           Dictionary<string, object> model = new Dictionary<string, object>();
-          Category selectedCategory = Category.Find(id);
-          List<Item> categoryItems = selectedCategory.GetItems();
-          model.Add("category", selectedCategory);
-          model.Add("items", categoryItems);
+          Contact selectedContact = Contact.Find(id);
+          List<Item> contactItems = selectedContact.GetItems();
+          model.Add("contact", selectedContact);
+          model.Add("items", contactItems);
           return View(model);
       }
 
@@ -45,15 +45,15 @@ namespace Project.Controllers
       public ActionResult CreateItem()
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
-        Category foundCategory = Category.Find(Int32.Parse(Request.Form["category-id"]));
-        string itemDescription = Request.Form["item-description"];
-        string itemDetails = Request.Form["item-details"];
+        Contact foundContact = Contact.Find(Int32.Parse(Request.Form["contact-id"]));
+        string itemDescription = Request.Form["person-name"];
+        string itemDetails = Request.Form["person-address"];
         string itemPhone = Request.Form["item-phone"];
         Item newItem = new Item(itemDescription, itemDetails, itemPhone);
-        foundCategory.AddItem(newItem);
-        List<Item> categoryItems = foundCategory.GetItems();
-        model.Add("items", categoryItems);
-        model.Add("category", foundCategory);
+        foundContact.AddItem(newItem);
+        List<Item> contactItems = foundContact.GetItems();
+        model.Add("items", contactItems);
+        model.Add("contact", foundContact);
         System.Console.WriteLine(itemDetails);
         return View("Details", model);
       }

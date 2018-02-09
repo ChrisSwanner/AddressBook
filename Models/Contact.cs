@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 namespace Project.Models
 {
-  public class Category
+  public class Contact
   {
-    private static List<Category> _instances = new List<Category> {};
+    private static List<Contact> _instances = new List<Contact> {};
     private string _name;
     private int _id;
     private List<Item> _items;
 
-    public Category(string categoryName)
+    public Contact(string contactName)
     {
-      _name = categoryName;
+      _name = contactName;
       _instances.Add(this);
       _id = _instances.Count;
       _items = new List<Item>{};
@@ -25,7 +25,7 @@ namespace Project.Models
     {
       return _id;
     }
-    public static List<Category> GetAll()
+    public static List<Contact> GetAll()
     {
       return _instances;
     }
@@ -33,7 +33,7 @@ namespace Project.Models
     {
       _instances.Clear();
     }
-    public static Category Find(int searchId)
+    public static Contact Find(int searchId)
     {
       return _instances[searchId-1];
     }

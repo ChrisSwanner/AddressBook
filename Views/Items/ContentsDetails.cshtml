@@ -8,9 +8,11 @@
   </head>
   <body>
     <div class="container">
-      <h1>@Model.GetDetails()</h1>
-      <form class="inline" action='/categories' method="get">
-        <button class="btn btn-info"type="submit" name="button">Return to Categories</button>
+      <h3>Address: @Model.GetDetails()</h3>
+      <h3>Phone Number: @Model.GetPhone()</h3>
+      <form class="inline" action='/contacts' method="get">
+        <br>
+        <button class="btn btn-info"type="submit" name="button">Return to Contacts</button>
       </form>
       <form class="inline" action='/' method="get">
         <button class="btn btn-info"type="submit" name="button">Return to Home</button>
