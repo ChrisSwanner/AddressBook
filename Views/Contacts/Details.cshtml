@@ -9,27 +9,26 @@
   <body>
     <div class="container">
       <h3>Current Details in this contact:</h3>
-      <hr class="style-two">
       <ol>
         @foreach (var item in @Model["items"])
         {
           <li><a href='/contacts/@Model["contact"].GetId()/items/@item.GetId()'>@item.GetDescription()</a></li>
         }
       </ol>
-      <hr class="style-two">
+      <hr class="style">
       <form class="inline" action='/contacts/@Model["contact"].GetId()/items/new' method="get">
-        <button class="btn btn-info"type="submit" name="button">Add new detail</button>
+        <button type="submit" name="button">Add new detail</button>
       </form>
-      <form class="inline" action='/categories' method="get">
-        <button class="btn btn-info"type="submit" name="button">Return to Contacts</button>
+      <form class="inline" action='/contacts' method="get">
+        <button type="submit" name="button">Return to Contacts</button>
       </form>
       <form class="inline" action='/' method="get">
-        <button class="btn btn-info"type="submit" name="button">Return to Home</button>
+        <button type="submit" name="button">Return to Home</button>
       </form>
       <br>
       <br>
       <form action="/items/delete" method="post">
-        <button class="btn btn-danger"type="submit" name="button">Clear All Items</button>
+        <button type="submit" name="button">Clear All Items</button>
       </form>
     </div>
   </body>

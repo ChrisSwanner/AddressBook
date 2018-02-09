@@ -9,18 +9,24 @@
   <body>
     <div class="container">
     <h1>Contact Details</h1>
-    <hr class="style-two">
     <h3>Add a new detail to @Model.GetName()</h3>
+    <br>
     <form action='/items' method='post'>
       <input id='contact-id' name='contact-id' type='hidden' value='@Model.GetId()'>
       <label for='person-name'>Name</label>
+      <br>
       <input id='person-name' name='person-name' type='text'>
+      <br>
       <label for='person-address'>Address</label>
+      <br>
       <input id='person-address' name='person-address' type='text'>
-      <hr>
+      <br>
       <label for='item-phone'>Phone Number</label>
+      <br>
       <input id='item-phone' name='item-phone' type='text'>
-      <button class="btn btn-info" type='submit'>Add Details</button>
+      <br>
+      <hr class="style">
+      <button  type='submit'>Add Details</button>
     </form>
   </div>
 
