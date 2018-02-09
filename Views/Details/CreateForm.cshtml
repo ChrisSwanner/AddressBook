@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+    <title>Contacts</title>
+  </head>
+  <body>
+    <div class="container">
+    <hr class="style-two">
+    <h3>Add a new detail about @Model.GetName()</h3>
+    <form action='/items' method='post'>
+      <input id='category-id' name='category-id' type='hidden' value='@Model.GetId()'>
+      <label for='item-description'>Person Description</label>
+      <input id='item-description' name='item-description' type='text'>
+      <label for='item-details'>Personal Details</label>
+      <input id='item-details' name='item-details' type='text'>
+      <button class="btn btn-info" type='submit'>Add Details</button>
+    </form>
+  </div>
+
+  </body>
+</html>
